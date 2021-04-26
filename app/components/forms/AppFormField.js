@@ -4,7 +4,7 @@ import { useFormikContext } from "formik";
 import AppTextInput from "../AppTextInput";
 import ErrorMessage from "./ErrorMessage";
 
-function AppFormField({ name, ...otherProps }) {
+function AppFormField({ name, width, ...otherProps }) {
   const { setFieldTouched, errors, handleChange, touched } = useFormikContext();
   return (
     <>
@@ -15,6 +15,7 @@ function AppFormField({ name, ...otherProps }) {
         // keyboardType="email-address"
         onChangeText={handleChange(name)}
         onBlur={() => setFieldTouched(name)}
+        width={width}
         {...otherProps}
         // placeholder="E-mail"
         // textContentType="emailAddress"
